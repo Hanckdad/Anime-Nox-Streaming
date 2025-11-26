@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AnimeNox - Streaming Anime Terlengkap</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loading-content">
+            <div class="loading-logo">
+                <span class="logo-text">AnimeNox</span>
+            </div>
+            <div class="loading-spinner-large"></div>
+            <p class="loading-text">Memuat anime terbaik untuk Anda...</p>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <a href="index.html" class="logo">
+                        <i class="fas fa-play-circle"></i>
+                        AnimeNox
+                    </a>
+                </div>
+                <div class="nav-menu">
+                    <a href="index.html" class="nav-link active" data-page="home">
+                        <i class="fas fa-home"></i> Home
+                    </a>
+                    <a href="pages/ongoing.html" class="nav-link" data-page="ongoing">
+                        <i class="fas fa-play"></i> Ongoing
+                    </a>
+                    <a href="pages/complete.html" class="nav-link" data-page="complete">
+                        <i class="fas fa-check-circle"></i> Complete
+                    </a>
+                    <a href="pages/batch.html" class="nav-link" data-page="batch">
+                        <i class="fas fa-download"></i> Batch
+                    </a>
+                    <a href="pages/schedule.html" class="nav-link" data-page="schedule">
+                        <i class="fas fa-calendar"></i> Jadwal
+                    </a>
+                    <div class="dropdown">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-tags"></i> Genre <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <div class="dropdown-content" id="genre-dropdown">
+                            <!-- Genre akan diisi oleh JavaScript -->
+                        </div>
+                    </div>
+                </div>
+                <div class="nav-actions">
+                    <div class="search-container">
+                        <input type="text" id="search-input" placeholder="Cari anime...">
+                        <button id="search-btn"><i class="fas fa-search"></i></button>
+                    </div>
+                    <button id="dark-mode-toggle" class="theme-toggle">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-background">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    <span class="gradient-text">Streaming Anime</span>
+                    <br>Terlengkap & Terupdate
+                </h1>
+                <p class="hero-subtitle">Nikmati berbagai koleksi anime terbaru dan klasik dengan kualitas HD tanpa buffering</p>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number" id="total-anime">1000+</span>
+                        <span class="stat-label">Anime</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number" id="total-episodes">50000+</span>
+                        <span class="stat-label">Episode</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number" id="active-users">10K+</span>
+                        <span class="stat-label">Users Aktif</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-search">
+                <div class="search-box-large">
+                    <input type="text" id="hero-search" placeholder="Cari anime favoritmu... (contoh: Naruto, One Piece)">
+                    <button class="search-btn-large">
+                        <i class="fas fa-search"></i> Cari Anime
+                    </button>
+                </div>
+                <div class="search-suggestions" id="search-suggestions">
+                    <!-- Suggestions akan muncul di sini -->
+                </div>
+            </div>
+        </div>
+        <div class="hero-slider">
+            <div class="slider-container" id="hero-slider">
+                <!-- Slider items akan diisi oleh JavaScript -->
+            </div>
+            <div class="slider-controls">
+                <button class="slider-prev"><i class="fas fa-chevron-left"></i></button>
+                <button class="slider-next"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Trending Section -->
+        <section class="section trending-section" id="trending">
+            <div class="section-header">
+                <div class="section-title-container">
+                    <i class="fas fa-fire section-icon"></i>
+                    <h2 class="section-title">Trending Anime</h2>
+                </div>
+                <a href="#" class="see-all" id="see-all-trending">
+                    Lihat Semua <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+            <div class="anime-grid" id="trending-anime">
+                <!-- Trending anime cards akan diisi oleh JavaScript -->
+            </div>
+        </section>
+
+        <!-- Ongoing Section -->
+        <section class="section ongoing-section" id="ongoing">
+            <div class="section-header">
+                <div class="section-title-container">
+                    <i class="fas fa-play-circle section-icon"></i>
+                    <h2 class="section-title">Sedang Tayang</h2>
+                </div>
+                <a href="pages/ongoing.html" class="see-all">
+                    Lihat Semua <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+            <div class="anime-grid" id="ongoing-anime">
+                <!-- Ongoing anime cards akan diisi oleh JavaScript -->
+            </div>
+        </section>
+
+        <!-- Latest Episode Section -->
+        <section class="section latest-section" id="latest">
+            <div class="section-header">
+                <div class="section-title-container">
+                    <i class="fas fa-history section-icon"></i>
+                    <h2 class="section-title">Episode Terbaru</h2>
+                </div>
+                <a href="#" class="see-all" id="see-all-latest">
+                    Lihat Semua <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+            <div class="episode-list" id="latest-episodes">
+                <!-- Latest episodes akan diisi oleh JavaScript -->
+            </div>
+        </section>
+
+        <!-- Complete Anime Section -->
+        <section class="section complete-section" id="complete">
+            <div class="section-header">
+                <div class="section-title-container">
+                    <i class="fas fa-check-double section-icon"></i>
+                    <h2 class="section-title">Anime Lengkap</h2>
+                </div>
+                <a href="pages/complete.html" class="see-all">
+                    Lihat Semua <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+            <div class="anime-grid" id="complete-anime">
+                <!-- Complete anime cards akan diisi oleh JavaScript -->
+            </div>
+        </section>
+
+        <!-- Popular Movies Section -->
+        <section class="section movies-section" id="movies">
+            <div class="section-header">
+                <div class="section-title-container">
+                    <i class="fas fa-film section-icon"></i>
+                    <h2 class="section-title">Movie Populer</h2>
+                </div>
+                <a href="#" class="see-all" id="see-all-movies">
+                    Lihat Semua <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+            <div class="anime-grid" id="movies-anime">
+                <!-- Movies akan diisi oleh JavaScript -->
+            </div>
+        </section>
+
+        <!-- Schedule Section -->
+        <section class="section schedule-section" id="schedule">
+            <div class="section-header">
+                <div class="section-title-container">
+                    <i class="fas fa-calendar-alt section-icon"></i>
+                    <h2 class="section-title">Jadwal Tayang Minggu Ini</h2>
+                </div>
+            </div>
+            <div class="schedule-container" id="schedule-content">
+                <!-- Schedule akan diisi oleh JavaScript -->
+            </div>
+        </section>
+
+        <!-- Random Anime Section -->
+        <section class="section random-section" id="random">
+            <div class="section-header">
+                <div class="section-title-container">
+                    <i class="fas fa-random section-icon"></i>
+                    <h2 class="section-title">Rekomendasi Acak</h2>
+                </div>
+                <button id="random-anime-btn" class="random-btn">
+                    <i class="fas fa-sync-alt"></i> Acak Lagi
+                </button>
+            </div>
+            <div class="random-anime-container" id="random-anime">
+                <!-- Random anime akan diisi oleh JavaScript -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="footer-logo">
+                    <i class="fas fa-play-circle"></i>
+                    AnimeNox
+                </div>
+                <p class="footer-description">
+                    Platform streaming anime terlengkap dengan berbagai fitur menarik untuk penggemar anime. 
+                    Nikmati pengalaman menonton terbaik dengan kualitas HD.
+                </p>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-discord"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-telegram"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3 class="footer-title">Menu Cepat</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="pages/ongoing.html"><i class="fas fa-play"></i> Ongoing</a></li>
+                    <li><a href="pages/complete.html"><i class="fas fa-check-circle"></i> Complete</a></li>
+                    <li><a href="pages/batch.html"><i class="fas fa-download"></i> Batch</a></li>
+                    <li><a href="pages/schedule.html"><i class="fas fa-calendar"></i> Jadwal</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3 class="footer-title">Kategori</h3>
+                <ul class="footer-links" id="footer-genres">
+                    <!-- Genres akan diisi oleh JavaScript -->
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3 class="footer-title">Informasi</h3>
+                <div class="footer-info">
+                    <p><strong>Author:</strong> Bayu Official</p>
+                    <p><strong>Github:</strong> Hanckdad</p>
+                    <p><strong>Update Info:</strong> 
+                        <a href="https://whatsapp.com/channel/0029Vb75Zu9JZg46i8MIK62u" target="_blank">
+                            WhatsApp Channel
+                        </a>
+                    </p>
+                    <p><strong>Email:</strong> anugrahabayu4@gmail.com</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-bottom-content">
+                <p>&copy; 2024 AnimeNox. All rights reserved. | Made with <i class="fas fa-heart"></i> for Anime Lovers</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">DMCA</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/utils.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/components.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
